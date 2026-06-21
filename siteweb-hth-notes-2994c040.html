@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f5f7fa;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .page {
+            flex: 1;
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 2rem;
+        }
+        .hero__badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+            padding: 0.2rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            color: #0f172a;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: #475569;
+            max-width: 600px;
+        }
+
+        /* section 通用 */
+        section {
+            margin-bottom: 3rem;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0f172a;
+            letter-spacing: -0.01em;
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+        }
+        .section-sub {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 1.25rem;
+        }
+
+        /* 优势区 三列卡片 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+        @media (min-width: 600px) {
+            .grid-3 {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem 1.25rem 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+            border: 1px solid #e9edf2;
+            transition: box-shadow 0.15s;
+        }
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .card em {
+            display: inline-block;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #3b82f6;
+            margin-bottom: 0.4rem;
+        }
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+        .card p {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        /* 说明区 */
+        .explain-box {
+            background: white;
+            border-radius: 14px;
+            padding: 1.8rem 1.8rem 2rem;
+            border: 1px solid #e2e8f0;
+        }
+        .explain-box p {
+            margin-bottom: 1rem;
+        }
+        .explain-box p:last-child {
+            margin-bottom: 0;
+        }
+        .explain-box .highlight {
+            background: #f1f5f9;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: #1e293b;
+        }
+
+        /* faq 摘要 */
+        .faq-list {
+            list-style: none;
+        }
+        .faq-list li {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 0;
+        }
+        .faq-list li:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #0f172a;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            color: #475569;
+            font-size: 0.92rem;
+        }
+
+        /* 底部 */
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #64748b;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .footer a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.1s;
+        }
+        .footer a:hover {
+            border-bottom-color: #1e40af;
+        }
+        .footer small {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .page {
+                padding: 1.5rem 1rem 2rem;
+            }
+            .explain-box {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <header class="hero">
+        <span class="hero__badge">简明指南</span>
+        <h1>华体会<br>访问与使用说明</h1>
+        <p>面向日常浏览场景的快速参考，涵盖平台定位、核心功能及常见问题。下方内容基于公开信息整理，便于新用户建立初步认知。</p>
+    </header>
+
+    <!-- 优势区 -->
+    <section>
+        <h2 class="section-title">平台特点</h2>
+        <div class="grid-3">
+            <div class="card">
+                <em>01</em>
+                <h3>界面克制</h3>
+                <p>布局以信息层级优先，减少无关干扰，操作路径短，适合快速查找与浏览。</p>
+            </div>
+            <div class="card">
+                <em>02</em>
+                <h3>功能聚合</h3>
+                <p>将常用模块统一收纳，无需多次跳转，降低多页面切换带来的认知负担。</p>
+            </div>
+            <div class="card">
+                <em>03</em>
+                <h3>持续更新</h3>
+                <p>内容与工具模块保持周期性迭代，适配主流设备与浏览器环境。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区 -->
+    <section>
+        <h2 class="section-title">使用说明</h2>
+        <div class="explain-box">
+            <p>
+                <strong>访问地址：</strong>直接通过浏览器打开 <a href="https://siteweb-hth.com.cn">华体会</a> 即可进入主站。
+                建议使用最新版 Chrome、Edge 或 Safari，以获得完整的样式与交互支持。
+            </p>
+            <p>
+                <strong>基本导航：</strong>顶部栏提供分类入口，页面采用宽屏自适应设计，在手机、平板与桌面端均保持可读性。
+                部分功能需启用 JavaScript，请确保浏览器未禁用脚本。
+            </p>
+            <p>
+                <strong>账户与数据：</strong>注册及登录流程遵循标准验证机制，个人数据加密传输。如遇登录异常，可先检查网络状态或清除缓存后重试。
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+        <h2 class="section-title">常见问题摘要</h2>
+        <p class="section-sub">以下整理自用户反馈中频次较高的几个方面，供快速参考。</p>
+        <ul class="faq-list">
+            <li>
+                <span class="faq-q">Q：页面加载缓慢怎么办？</span>
+                <span class="faq-a">首先确认网络连接稳定，其次可尝试关闭 VPN 或代理。部分地区 CDN 节点延迟可能导致首屏稍慢，通常等待数秒即可正常显示。</span>
+            </li>
+            <li>
+                <span class="faq-q">Q：是否支持深色模式？</span>
+                <span class="faq-a">目前主界面跟随系统主题，部分模块独立适配深色背景。如果切换到深色模式后出现显示异常，可暂时切回浅色模式。</span>
+            </li>
+            <li>
+                <span class="faq-q">Q：忘记密码如何重置？</span>
+                <span class="faq-a">在登录页点击「忘记密码」，根据提示输入注册邮箱或手机号，系统将发送重置链接。如未收到，请检查垃圾邮件箱或等待5分钟后重试。</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 底部链接 -->
+    <footer class="footer">
+        <div>
+            <a href="https://siteweb-hth.com.cn">华体会</a>
+            <span style="margin: 0 0.4rem; opacity: 0.3;">·</span>
+            <small>内容索引 · 更新于最近版本</small>
+        </div>
+        <small>部分功能视浏览器而定</small>
+    </footer>
+
+</div>
+</body>
+</html>
