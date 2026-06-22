@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷火电竞 · 可信竞技平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #f5f9fc;
+            color: #1a2b3c;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 880px;
+            width: 100%;
+        }
+
+        /* 短开场 — 故事感引子 */
+        .opening-line {
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            color: #1f5f6c;
+            background: rgba(45, 150, 150, 0.07);
+            display: inline-block;
+            padding: 0.4rem 1.1rem;
+            border-radius: 40px;
+            margin-bottom: 0.6rem;
+            font-weight: 420;
+            border-left: 3px solid #2b9c9c;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 540;
+            line-height: 1.25;
+            margin: 0.5rem 0 1.8rem 0;
+            color: #0f3b44;
+            letter-spacing: -0.01em;
+        }
+        h1 small {
+            display: block;
+            font-size: 1rem;
+            font-weight: 380;
+            color: #3d6b73;
+            margin-top: 0.3rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* 承接段落 — 信息密度 */
+        .intro-block {
+            background: #ffffff;
+            padding: 1.8rem 2rem;
+            border-radius: 28px;
+            box-shadow: 0 6px 18px rgba(10, 60, 70, 0.06);
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(40, 150, 150, 0.12);
+        }
+
+        .intro-block p {
+            margin-bottom: 1.1rem;
+            font-size: 1.02rem;
+            color: #1f3742;
+        }
+
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .accent-link {
+            color: #1a7e7e;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(30, 130, 130, 0.3);
+            transition: border-color 0.2s, color 0.15s;
+        }
+        .accent-link:hover {
+            color: #0a5c5c;
+            border-bottom-color: #0a5c5c;
+        }
+
+        /* 特点网格卡片 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+            margin: 2.2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 22px;
+            padding: 1.6rem 1.3rem;
+            box-shadow: 0 3px 12px rgba(20, 80, 90, 0.04);
+            border: 1px solid #ddeff2;
+            transition: all 0.2s ease;
+        }
+        .feature-card:hover {
+            border-color: #3bb0b0;
+            box-shadow: 0 6px 18px rgba(40, 140, 140, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 540;
+            color: #12454f;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .feature-card h3::before {
+            content: "▹";
+            color: #2a9d8f;
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+        .feature-card p {
+            font-size: 0.93rem;
+            color: #2d4a54;
+            margin-top: 0.2rem;
+        }
+
+        /* 场景段落 (温和结尾基调) */
+        .scene-text {
+            background: #e5f1f5;
+            padding: 1.8rem 2rem;
+            border-radius: 28px;
+            margin: 2.2rem 0 1.8rem 0;
+            border-left: 5px solid #2b9c9c;
+            font-size: 1rem;
+            color: #15323b;
+        }
+        .scene-text strong {
+            color: #0b5f69;
+            font-weight: 550;
+        }
+
+        /* FAQ 摘要 — 紧凑但完整 */
+        .faq-mini {
+            background: white;
+            border-radius: 24px;
+            padding: 1.6rem 1.8rem;
+            margin: 2rem 0 2.2rem 0;
+            border: 1px solid #cee7eb;
+        }
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed #c6dce1;
+            padding-bottom: 0.6rem;
+        }
+        .faq-mini details:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .faq-mini summary {
+            font-weight: 500;
+            color: #135a65;
+            cursor: pointer;
+            font-size: 0.98rem;
+            padding: 0.2rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .faq-mini summary::before {
+            content: "﹖";
+            color: #2b9c9c;
+            font-size: 1.1rem;
+            margin-right: 0.5rem;
+            font-weight: 500;
+        }
+        .faq-mini details[open] summary::before {
+            content: "﹗";
+        }
+        .faq-mini .answer {
+            margin-top: 0.3rem;
+            padding-left: 1.6rem;
+            color: #1f404b;
+            font-size: 0.92rem;
+        }
+
+        /* 温和收尾 */
+        .closing-note {
+            text-align: center;
+            padding: 1.6rem 0 0.3rem 0;
+            font-size: 0.95rem;
+            color: #2b5f69;
+            border-top: 1px solid #d3e4e9;
+            margin-top: 1.2rem;
+        }
+        .closing-note span {
+            background: #d6eef2;
+            padding: 0.1rem 0.5rem;
+            border-radius: 20px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            h1 small {
+                font-size: 0.9rem;
+            }
+            .intro-block {
+                padding: 1.3rem 1.2rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+            .feature-card {
+                padding: 1.2rem 1rem;
+            }
+            .scene-text {
+                padding: 1.2rem 1.2rem;
+            }
+            .faq-mini {
+                padding: 1rem 1rem;
+            }
+            .opening-line {
+                font-size: 0.9rem;
+                padding: 0.2rem 0.8rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .intro-block p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* 无干扰装饰 */
+        hr {
+            border: none;
+            border-top: 1px solid #d0e4e9;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- 故事感开场短句 -->
+        <div class="opening-line">✦ 从一处站点，到一份信任</div>
+
+        <h1>
+            雷火电竞
+            <small>围绕竞技服务构建的透明度档案</small>
+        </h1>
+
+        <!-- 承接段落 — 站点介绍与可信说明 -->
+        <div class="intro-block">
+            <p>
+                <strong>home-leihouesports.com</strong> 自建立之初便以信息清晰、路径直接为原则。这一页面聚合了关于竞技平台的基础事实、功能边界以及服务逻辑，帮助新访客在几分钟内建立整体认知。作为了解 <a href="https://home-leihouesports.com" class="accent-link">雷火电竞</a> 的起点，内容侧重可验证的细节，而非宽泛的宣扬。
+            </p>
+            <p>
+                站内不堆砌术语，也不回避必要的说明。从账户体系到赛事呈现逻辑，每一模块都经过克制编排。无论你是初次接触还是希望核对信息结构，这里提供的描述均以一致性为前提。
+            </p>
+            <p>
+                可信的基础在于信息可追溯。本站点以清晰的分层展示核心模块，并辅以常见问题摘要，降低理解成本。
+            </p>
+        </div>
+
+        <!-- 特点网格卡片 -->
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>模块化信息</h3>
+                <p>赛事、账户、安全、支持四个维度独立成块，查阅时无需频繁跳转。</p>
+            </div>
+            <div class="feature-card">
+                <h3>一致的路径规范</h3>
+                <p>内部链接与导航采用固定命名规则，减少混淆与失效可能。</p>
+            </div>
+            <div class="feature-card">
+                <h3>低干扰呈现</h3>
+                <p>无弹窗、无自动播放、无隐藏跳转，页面行为完全可预测。</p>
+            </div>
+            <div class="feature-card">
+                <h3>边界说明</h3>
+                <p>明确标注每项功能的适用范围与限制，不夸大成全能力。</p>
+            </div>
+        </div>
+
+        <!-- 场景段落 — 具体使用示意 (温和) -->
+        <div class="scene-text">
+            <strong>一个典型的使用场景：</strong> 用户通过站点导航了解赛事分类与对应规则，再依据页面提示完成账户注册或信息查阅。整个过程不涉及外部强制跳转，所有关键操作均可在 <a href="https://home-leihouesports.com" class="accent-link">雷火电竞</a> 内部闭环完成。这种设计意在降低意外中断，让每一步都有据可依。
+        </div>
+
+        <!-- FAQ 摘要 — 真实风向 -->
+        <div class="faq-mini">
+            <details>
+                <summary>该站点是否聚合所有赛事信息？</summary>
+                <div class="answer">页面提供的是结构化的赛事分类与核心规则说明，具体实时数据以站内对应模块为准。建议以最新页面显示为准。</div>
+            </details>
+            <details>
+                <summary>账户相关的说明在哪里？</summary>
+                <div class="answer">账户创建、验证及安全配置集中收录于「账户」分区，每个步骤均配有简要注释。如有疑问可参考 FAQ 或联系支持摘要。</div>
+            </details>
+            <details>
+                <summary>页面信息多久更新一次？</summary>
+                <div class="answer">主要模块随平台功能迭代同步修订，次要说明按季度复核。每次更新会在站点日志中标记，但本站不设版本号强制提示。</div>
+            </details>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="closing-note">
+            <span>保持简明 · 保持可查</span><br>
+            <span style="font-size:0.85rem; opacity:0.7;">站点描述基于公开功能与界面逻辑整理</span>
+        </div>
+
+        <!-- 底部包含指向主页的链接（嵌入自然句子） -->
+        <hr>
+        <p style="font-size: 0.9rem; color: #2b5f69; margin: 1.2rem 0 0.2rem 0; text-align: center;">
+            若需直接访问主站，可使用链接 <a href="https://home-leihouesports.com" class="accent-link">雷火电竞</a> ——页面结构与本文描述一致。
+        </p>
+
+    </div>
+</body>
+</html>
