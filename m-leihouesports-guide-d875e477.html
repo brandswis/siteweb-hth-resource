@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷火电竞 · 站点介绍与使用说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f0f2f5;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page-wrapper {
+            max-width: 960px;
+            width: 100%;
+        }
+
+        /* 卡片通用样式 */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e6e9ed;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s ease;
+        }
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        /* 标题与文字 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+            color: #10161e;
+        }
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3a7bd5;
+            padding-left: 0.75rem;
+            color: #1f2a3c;
+        }
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #2b3a4e;
+        }
+        p, li {
+            color: #2f3e55;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .text-muted {
+            color: #5e6f84;
+            font-size: 0.95rem;
+        }
+        .small {
+            font-size: 0.9rem;
+        }
+
+        /* 列表 */
+        ul, ol {
+            padding-left: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* 链接 —— 重点：只允许文本“雷火电竞” */
+        a {
+            color: #1e6bb8;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+        a:hover {
+            border-bottom-color: #1e6bb8;
+            text-decoration: none;
+        }
+        .link-highlight {
+            background: #eaf2fc;
+            padding: 0.1rem 0.25rem;
+            border-radius: 4px;
+        }
+
+        /* hero 区 */
+        .hero {
+            text-align: center;
+            padding: 2.5rem 1.5rem 1.8rem;
+        }
+        .hero p {
+            max-width: 680px;
+            margin: 0.8rem auto 0;
+            font-size: 1.05rem;
+        }
+
+        /* 两列布局 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* 标签 / 小徽章 */
+        .tag {
+            display: inline-block;
+            background: #eef2f6;
+            color: #2d4057;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+            border: 1px solid #dde1e8;
+        }
+
+        /* 提示块 */
+        .insight-box {
+            background: #f7f9fc;
+            border-left: 4px solid #8a9bb0;
+            padding: 1rem 1.3rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+        .insight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #eef1f5;
+        }
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        .faq-a {
+            color: #4a5c74;
+            font-size: 0.95rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e0e4ea;
+            margin: 1.2rem 0;
+        }
+        .footer-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7e96;
+            padding-top: 1rem;
+            border-top: 1px solid #dfe3e9;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- Hero 摘要 -->
+    <div class="card hero">
+        <h1>关于雷火电竞 · 站点介绍</h1>
+        <p class="text-muted" style="max-width:700px; margin:0 auto;">
+            <strong>雷火电竞</strong> 是一个围绕电子竞技内容与信息聚合的线上平台，  
+            旨在为电竞爱好者提供赛事资讯、战队动态、数据分析以及社区交流的辅助参考。  
+            本页作为站点的补充说明，整理了平台的定位、主要特点与使用建议，帮助新访客快速了解。
+        </p>
+        <div style="margin-top: 1.2rem;">
+            <span class="tag">电竞资讯</span>
+            <span class="tag">赛事数据</span>
+            <span class="tag">社区参考</span>
+            <span class="tag">信息聚合</span>
+        </div>
+    </div>
+
+    <!-- 站点亮点 + 使用建议 两列 -->
+    <div class="grid-2">
+        <!-- 左侧：亮点 -->
+        <div class="card">
+            <h2>站点亮点</h2>
+            <ul>
+                <li><strong>多维度赛事覆盖</strong> —— 汇集主流项目（LOL、Dota2、CS、Valorant 等）的赛程与比分，方便快速查阅。</li>
+                <li><strong>数据查询与对比</strong> —— 提供战队历史交锋记录、选手近期状态等参考数据，辅助观赛判断。</li>
+                <li><strong>社区内容聚合</strong> —— 整合讨论区、赛事复盘与热门话题，为深度爱好者提供信息汇集地。</li>
+                <li><strong>界面简洁直白</strong> —— 没有多余干扰，重点信息突出，适合日常快速浏览。</li>
+            </ul>
+            <div class="insight-box">
+                <p class="small" style="margin-bottom:0;"><strong>一句话亮点：</strong> 从赛程到数据再到讨论，一个位置看完，省去切换多个页面的麻烦。</p>
+            </div>
+        </div>
+
+        <!-- 右侧：使用建议 -->
+        <div class="card">
+            <h2>使用建议</h2>
+            <p>为了让体验更顺畅，可参考以下几点：</p>
+            <ol>
+                <li><strong>关注赛程日历</strong> —— 首页会按时间排序近几日重点赛事，提前标记你想看的场次。</li>
+                <li><strong>利用数据对比功能</strong> —— 在战队或选手页面，可以并排查看多项指标，发现趋势。</li>
+                <li><strong>社区内容筛选</strong> —— 使用标签或分类过滤，快速找到复盘、战报或讨论帖。</li>
+                <li><strong>移动端适配</strong> —— 页面针对手机和平板做了响应式设计，随时滑动浏览。</li>
+            </ol>
+            <p class="small text-muted" style="margin-top:0.8rem;">
+                * 以上建议基于平台当前功能结构整理，具体以实际站点表现为准。
+            </p>
+        </div>
+    </div>
+
+    <!-- 场景说明 / 可信说明 -->
+    <div class="card">
+        <h2>可信克制的访问说明</h2>
+        <p>
+            本站属于信息聚合与内容参考平台，所有赛事数据均来源于公开赛事接口或社区贡献，  
+            平台方不参与任何形式的投注、博彩或资金交易，请用户理性对待电竞信息，切勿沉迷。
+        </p>
+        <p>
+            内容方面，战报与复盘文章由社区作者或编辑整理，力求客观，但无法保证百分百无误。  
+            如果你发现数据偏差或内容问题，可以通过站点反馈渠道告知，帮助持续改进。
+        </p>
+        <p style="margin-bottom:0;">
+            平台不存储用户敏感信息，也不主动索取个人资料。浏览时可根据自身需求使用，  
+            保持合理的时间分配，享受电竞本身带来的竞技乐趣。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 + 链接嵌入 -->
+    <div class="card">
+        <h2>常见疑问摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">Q：这个平台可以提供哪些具体信息？</div>
+            <div class="faq-a">A：主要包括赛程预告、实时比分、战队选手数据、历史战绩、社区讨论与赛事复盘。不同版块各有侧重。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：数据更新快吗？</div>
+            <div class="faq-a">A：赛程和比分会根据官方接口尽量实时同步，复盘与讨论区内容更新由社区节奏决定，通常每天都有新内容。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：是否需要注册才能浏览？</div>
+            <div class="faq-a">A：大部分内容开放浏览，部分社区互动功能（如发帖、评论）可能需要注册账号，依据站点具体规则。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：如何找到站点入口？</div>
+            <div class="faq-a">
+                <!-- 唯一链接，可见文本严格等于“雷火电竞” -->
+                你可以直接访问 <a href="https://m-leihouesports.com" class="link-highlight">雷火电竞</a> 开始浏览，  
+                首页会展示当前热门赛事和最新内容推荐。
+            </div>
+        </div>
+    </div>
+
+    <!-- 额外提示：链接自然使用 -->
+    <div class="card" style="padding: 1.2rem 2rem;">
+        <p class="small text-muted" style="margin-bottom:0;">
+            💡 如果你对电竞资讯与数据参考感兴趣，不妨将 <a href="https://m-leihouesports.com">雷火电竞</a> 加入书签，  
+            方便后续快速回到这个信息聚合页面。平台持续优化内容结构与浏览体验。
+        </p>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-note">
+        页面内容仅供介绍说明 · 与实际站点功能保持一致 · 理性浏览，享受电竞
+    </div>
+
+</div>
+</body>
+</html>
